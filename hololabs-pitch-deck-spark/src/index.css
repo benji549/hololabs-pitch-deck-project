@@ -1,0 +1,127 @@
+/* Fonts loaded via index.html link preload */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 8%;
+    --foreground: 0 0% 96%;
+
+    --card: 210 18% 12%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 210 18% 12%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 168 66% 49%;
+    --primary-foreground: 210 20% 8%;
+
+    --secondary: 210 18% 16%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 210 14% 18%;
+    --muted-foreground: 210 10% 60%;
+
+    --accent: 168 66% 49%;
+    --accent-foreground: 210 20% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 14% 20%;
+    --input: 210 14% 20%;
+    --ring: 168 66% 49%;
+
+    --radius: 0.75rem;
+
+    --slide-dark: 210 20% 8%;
+    --slide-teal: 168 66% 49%;
+    --slide-teal-dark: 172 80% 28%;
+    --slide-navy: 200 30% 12%;
+    --slide-gray: 210 10% 60%;
+
+    --sidebar-background: 210 18% 10%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 168 66% 49%;
+    --sidebar-primary-foreground: 210 20% 8%;
+    --sidebar-accent: 210 18% 16%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 210 14% 18%;
+    --sidebar-ring: 168 66% 49%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+/* Slide content font scaling */
+.slide-content {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.slide-content .text-body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Slide transitions */
+.slide-enter {
+  animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.animate-fade-up-delay-1 { animation-delay: 0.1s; }
+.animate-fade-up-delay-2 { animation-delay: 0.2s; }
+.animate-fade-up-delay-3 { animation-delay: 0.3s; }
+.animate-fade-up-delay-4 { animation-delay: 0.4s; }
+.animate-fade-up-delay-5 { animation-delay: 0.5s; }
+
+/* Gradient overlays */
+.slide-gradient-left {
+  background: linear-gradient(90deg, hsl(var(--slide-dark)) 0%, hsl(var(--slide-dark) / 0.85) 40%, transparent 70%);
+}
+
+.slide-gradient-bottom {
+  background: linear-gradient(180deg, transparent 0%, hsl(var(--slide-dark) / 0.9) 100%);
+}
+
+.slide-gradient-teal {
+  background: linear-gradient(135deg, hsl(var(--slide-teal-dark)) 0%, hsl(var(--slide-teal)) 100%);
+}
